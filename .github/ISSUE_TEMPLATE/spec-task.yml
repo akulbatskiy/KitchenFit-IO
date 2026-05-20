@@ -1,0 +1,35 @@
+name: Spec task
+description: Track an implementation or mock task derived from a spec
+title: "Spec task: "
+labels: ["spec-task"]
+body:
+  - type: input
+    id: spec
+    attributes:
+      label: Spec folder
+      placeholder: specs/001-ai-kitchen-report-assistant
+    validations:
+      required: true
+  - type: textarea
+    id: task
+    attributes:
+      label: Task
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+    validations:
+      required: true
+  - type: dropdown
+    id: gate
+    attributes:
+      label: Build gate
+      options:
+        - Discovery
+        - Mock
+        - Pilot
+        - MVP
+    validations:
+      required: true

@@ -1,0 +1,41 @@
+name: Discovery note
+description: Capture a customer signal, interview, or workflow observation
+title: "Discovery: "
+labels: ["discovery"]
+body:
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: Who, when, and why this conversation happened.
+    validations:
+      required: true
+  - type: textarea
+    id: facts
+    attributes:
+      label: Confirmed facts
+    validations:
+      required: true
+  - type: textarea
+    id: assumptions
+    attributes:
+      label: Assumptions
+    validations:
+      required: true
+  - type: dropdown
+    id: readiness
+    attributes:
+      label: Payment readiness
+      options:
+        - Red
+        - Yellow
+        - Yellow-plus
+        - Green
+    validations:
+      required: true
+  - type: textarea
+    id: next
+    attributes:
+      label: Next action
+    validations:
+      required: true
