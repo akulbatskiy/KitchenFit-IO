@@ -120,9 +120,8 @@ function matchZone(raw: string): Zone | null {
   return null;
 }
 
-let rowCounter = 0;
 function nextId(): string {
-  return `import-${++rowCounter}-${Date.now()}`;
+  return `import-${crypto.randomUUID()}`;
 }
 
 export function applyMapping(rawRows: string[][], mapping: ColumnMapping): MapRowsResult {
