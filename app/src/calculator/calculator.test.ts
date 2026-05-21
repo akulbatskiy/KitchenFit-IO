@@ -81,6 +81,18 @@ describe('calculate — operating hours', () => {
     const result = calculate(rows, baseAssumptions);
     expect(result.operatingHours).toBe(10); // 07:00 to 17:00
   });
+
+  it('clamps to zero when end is before start', () => {
+    const rows = [makeRow({ qty: 1, kwEach: 10 })];
+    const result = calculate(rows, {
+      ...baseAssumptions,
+      operatingStart: '17:00',
+      operatingEnd: '07:00',
+    });
+    expect(result.operatingHours).toBe(0);
+    expect(result.dailyEnergy).toBe(0);
+    expect(result.annualElectricityOPEX).toBe(0);
+  });
 });
 
 describe('calculate — water OPEX', () => {

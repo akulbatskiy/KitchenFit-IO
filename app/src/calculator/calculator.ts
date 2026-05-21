@@ -106,7 +106,9 @@ export function calculate(
 
   const startH = parseTimeToHours(assumptions.operatingStart);
   const endH = parseTimeToHours(assumptions.operatingEnd);
-  const operatingHours = round2(endH - startH);
+  // Clamp to zero — end ≤ start (user error or overnight entry) must not
+  // silently produce zero or negative OPEX figures.
+  const operatingHours = round2(Math.max(0, endH - startH));
 
   const dailyEnergy = round2(diversifiedKW * operatingHours);
   const annualEnergy = round2(dailyEnergy * assumptions.operatingDays);
