@@ -1,0 +1,28 @@
+{
+  "name": "kitchenfit-io",
+  "version": "1.0.0",
+  "description": "KitchenFit IO is an early-stage product discovery project for AI-assisted commercial kitchen design, engineering reports, and potential handover workflows.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akulbatskiy/KitchenFit-IO.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/akulbatskiy/KitchenFit-IO/issues"
+  },
+  "homepage": "https://github.com/akulbatskiy/KitchenFit-IO#readme",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.97.1",
+    "@vercel/node": "^5.8.3"
+  }
+}
