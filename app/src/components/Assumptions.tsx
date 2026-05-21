@@ -1,5 +1,6 @@
 import type { Dispatch } from 'react';
 import type { AppAction, AppState } from '../hooks/useReport';
+import type { Assumptions as AssumptionsType, Project } from '../calculator/types';
 
 interface Props {
   state: AppState;
@@ -9,10 +10,10 @@ interface Props {
 export function Assumptions({ state, dispatch }: Props) {
   const { project: p, assumptions: a } = state;
 
-  function setP(patch: Parameters<typeof dispatch>[0] extends { type: 'UPDATE_PROJECT'; payload: infer P } ? P : never) {
+  function setP(patch: Partial<Project>) {
     dispatch({ type: 'UPDATE_PROJECT', payload: patch });
   }
-  function setA(patch: Parameters<typeof dispatch>[0] extends { type: 'UPDATE_ASSUMPTIONS'; payload: infer P } ? P : never) {
+  function setA(patch: Partial<AssumptionsType>) {
     dispatch({ type: 'UPDATE_ASSUMPTIONS', payload: patch });
   }
 

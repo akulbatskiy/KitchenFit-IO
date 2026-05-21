@@ -1,4 +1,4 @@
-import type { EquipmentRow, EquipmentType, Zone } from './types';
+import type { EquipmentType, Zone } from './types';
 import { ZONES } from './types';
 
 export type ColumnKey = 'ref' | 'description' | 'qty' | 'kwEach' | 'zone';

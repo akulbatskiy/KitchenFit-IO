@@ -1,6 +1,6 @@
 import { type Dispatch, useState } from 'react';
 import type { AppAction, AppState } from '../hooks/useReport';
-import type { ColumnKey, ColumnMapping } from '../calculator/parser';
+import type { ColumnKey } from '../calculator/parser';
 import { applyMapping, parseRawText, unmappedKeys } from '../calculator/parser';
 import { calculateConnectedLoad } from '../calculator/calculator';
 import {

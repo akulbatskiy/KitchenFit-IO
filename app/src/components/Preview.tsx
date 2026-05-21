@@ -232,7 +232,7 @@ function EquipmentRegister({ state }: { state: AppState }) {
               <CartesianGrid strokeDasharray="3 3" horizontal={false} />
               <XAxis type="number" tick={{ fontSize: 11 }} unit=" kW" />
               <YAxis type="category" dataKey="name" tick={{ fontSize: 11 }} width={110} />
-              <Tooltip formatter={(v: number) => [`${v.toFixed(1)} kW`, 'Connected load']} />
+              <Tooltip formatter={(v) => [typeof v === 'number' ? `${v.toFixed(1)} kW` : '—', 'Connected load']} />
               <Bar dataKey="kW" radius={[0, 3, 3, 0]}>
                 {chartData.map((_, i) => (
                   <Cell key={i} fill={i % 2 === 0 ? BURGUNDY : BURGUNDY2} />
@@ -300,7 +300,7 @@ function DemandProfile({ calc }: { calc: CalculatedResults }) {
             <CartesianGrid strokeDasharray="3 3" vertical={false} />
             <XAxis dataKey="name" tick={{ fontSize: 11 }} />
             <YAxis tick={{ fontSize: 11 }} unit=" kW" />
-            <Tooltip formatter={(v: number) => [`${v.toFixed(1)} kW`]} />
+            <Tooltip formatter={(v) => [typeof v === 'number' ? `${v.toFixed(1)} kW` : '—']} />
             <Bar dataKey="kW" radius={[3, 3, 0, 0]}>
               <Cell fill={BURGUNDY} />
               <Cell fill={SLATE} />
@@ -380,7 +380,7 @@ function OPEXSummary({ calc }: { calc: CalculatedResults }) {
               <CartesianGrid strokeDasharray="3 3" vertical={false} />
               <XAxis dataKey="name" tick={{ fontSize: 11 }} />
               <YAxis tick={{ fontSize: 11 }} tickFormatter={(v) => `£${(v / 1000).toFixed(0)}k`} />
-              <Tooltip formatter={(v: number) => [fmtGBP(v)]} />
+              <Tooltip formatter={(v) => [typeof v === 'number' ? fmtGBP(v) : '—']} />
               <Bar dataKey="value" radius={[3, 3, 0, 0]}>
                 <Cell fill={BURGUNDY} />
                 <Cell fill={BURGUNDY2} />
